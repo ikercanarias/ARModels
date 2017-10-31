@@ -3,11 +3,14 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs='sourceType: webcam;'>
-    <a-marker preset='hiro'>
-      <!--Adding a glTF 2.0 model to your scene-->
-      <a-entity gltf-model-next="src: url(https://cdn.rawgit.com/ikercanarias/ARModels/master/gibson_sg_guitar/scene.gltf);"></a-entity>
-    </a-marker>
-    <a-entity camera></a-entity>
-  </a-scene>
+	<a-scene embedded arjs>
+<!-- below is for content -->
+<a-assets>
+<!-- id=“file name“ src=“file url" -->
+	<a-asset-item id="makery" src="https://cdn.rawgit.com/ikercanarias/ARModels/master/gibson_sg_guitar/scene.gltf"></a-asset-item>
+</a-assets>
+<!-- scale values allow you to adjust the file’s display size, gltf-model=“#your file name“ -->
+<a-entity scale="20 20 20"  gltf-model="#makery"></a-entity>
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
 </body>
