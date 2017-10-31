@@ -3,14 +3,17 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs>
-<!-- below is for content -->
-<!-- define your gltf asset -->
-<a-assets>
-  <a-asset-item id="tree" src="https://cdn.rawgit.com/AnalyticalGraphicsInc/cesium/blob/master/Apps/SampleData/models/WoodTower/Wood_Tower.gltf"></a-asset-item>
-</a-assets>
-<!-- use your gltf model -->
-<a-entity gltf-model="##tree"></a-entity>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
+  <a-scene embedded arjs='sourceType: webcam;'>
+ 
+    <a-marker preset='hiro'>
+      <!--Adding a glTF 2.0 model to your scene-->
+      <a-entity
+      gltf-model-next="src: url(https://cdn.rawgit.com/AnalyticalGraphicsInc/cesium/blob/master/Apps/SampleData/models/WoodTower/Wood_Tower.gltf);"
+      >
+      </a-entity>
+      
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
